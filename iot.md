@@ -12,6 +12,26 @@ sudo apt-get install -y i2c-tools python3-smbus
 
 python3 -m pip install --upgrade --no-cache-dir adafruit-blinka adafruit-circuitpython-busdevice adafruit-circuitpython-ads1x15 --break-system-packages
 
+fingerprint:
+1: VCC Red Connect it to USB-
+TTL(5V) : VCC
+2: GND Black Connect it to USB-TTL:GND
+3: Tx Yellow Connect it to USB-TTL:Rx
+4: Rx White Connect it to USB-TTL:
+
+Tx
+Enter the following commands in terminal.
+ sudo raspi-config
+ Go to Interfacing options -&gt;I2C &amp; SPI -&gt; Enable it.
+ pip install pyfingerprint –break-system-packages
+ ls /dev/ttyUSB*
+If required enter the following commands
+ sudo apt-get -f install
+ sudo usermod -a -G dialout pi
+If any module error after doing these steps so do the below steps:
+Install the module
+Sudo pip3 install pyfingerprint
+
 
 
 **7Segment:**
